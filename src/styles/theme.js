@@ -3,11 +3,11 @@
 export default {
     COLORS: {
       BACKGROUND_900: "#001621",
-      BACKGROUND_800: "#01253A",
+      BACKGROUND_800: "#001A27",
       BACKGROUND_700: "#3E3B47",
   
       WHITE: "#F4EDE8",
-      ORANGE: "#FF5522",
+      ORANGE: "#FE6F5F",
   
       GRAY_100: "#999591",
       GRAY_300: "#666360",

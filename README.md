@@ -7,5 +7,5 @@ npm install
 
 2. Execute o projeto
 ```bash
-npm install
+npm run dev
 ```
