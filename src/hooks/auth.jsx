@@ -2,8 +2,6 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 import { api } from "../services/api";
 
-import { useNavigate  } from "react-router-dom";
-
 export const AuthContext = createContext({});
 
 function AuthProvider({ children }) {
@@ -18,7 +16,8 @@ function AuthProvider({ children }) {
             localStorage.setItem("@rocketevents:user", JSON.stringify(user));
             localStorage.setItem("@rocketevents:token", token);
 
-            api.defaults.headers.authorization = `Bearer ${token}`;
+            // api.defaults.headers.authorization = `Bearer ${token}`;
+            api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
             setData({ user, token })
 
             console.log(user, token);
@@ -43,7 +42,8 @@ function AuthProvider({ children }) {
         const user = localStorage.getItem("@rocketevents:user");
 
         if (token && user) {
-            api.defaults.headers.authorization = `Bearer ${token}`;
+            // api.defaults.headers.authorization = `Bearer ${token}`;
+            api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
             setData({
                 token,
                 user: JSON.parse(user)
