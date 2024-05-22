@@ -14,7 +14,7 @@ export function Header() {
 
     return (
         <Container>
-            <Profile to="#">
+            <Profile to="/profile">
                 <img src="http://github.com/queziafiladelfo.png" alt="Foto do usuário" />
 
                 <div>
