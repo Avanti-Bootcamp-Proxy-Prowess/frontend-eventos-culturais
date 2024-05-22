@@ -2,6 +2,8 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 import { api } from "../services/api";
 
+import { useNavigate  } from "react-router-dom";
+
 export const AuthContext = createContext({});
 
 function AuthProvider({ children }) {
@@ -29,11 +31,18 @@ function AuthProvider({ children }) {
         }
     }
 
+    function logout() {
+        localStorage.removeItem("@rocketevents:token");
+        localStorage.removeItem("@rocketevents:user");
+
+        setData({});
+    }
+
     useEffect(() => {
         const token = localStorage.getItem("@rocketevents:token");
         const user = localStorage.getItem("@rocketevents:user");
 
-        if(token && user) {
+        if (token && user) {
             api.defaults.headers.authorization = `Bearer ${token}`;
             setData({
                 token,
@@ -43,7 +52,11 @@ function AuthProvider({ children }) {
     }, []);
 
     return (
-        <AuthContext.Provider value={{ login, user: data.user }}>
+        <AuthContext.Provider value={{
+            login,
+            user: data.user,
+            logout
+        }}>
             {children}
         </AuthContext.Provider>
     )
