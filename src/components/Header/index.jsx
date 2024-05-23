@@ -2,8 +2,10 @@ import { RiShutDownLine } from "react-icons/ri";
 import { useAuth } from "../../hooks/auth";
 import { api } from '../../services/api';
 import { Container, Profile, Logout } from "./styles";
+
 import { useNavigate  } from "react-router-dom";
 import avatarPlaceholder  from "../../assets/userImg.jpg"
+import Drawer from "../../components/Drawer";
 
 export function Header() {
     const { logout, user } = useAuth();
@@ -19,9 +21,9 @@ export function Header() {
 
     return (
         <Container>
+            <Drawer/>                         
             <Profile to="/profile">
                 <img src={avatarUrl} alt={user.nome} />
-
                 <div>
                     <span>Bem vindo</span>
                     <strong>{user.nome}</strong>
