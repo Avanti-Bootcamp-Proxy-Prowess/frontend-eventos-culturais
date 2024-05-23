@@ -37,10 +37,18 @@ function AuthProvider({ children }) {
         setData({});
     }
 
-    async function updateProfile({ user }) {
+    async function updateProfile({ user, avatarFile }) {
         try {
 
-            await api.put("/usuarios", user); //ver se eh users ou usuarios:????
+            if(avatarFile){
+                const fileUploadForm = new FormData();
+                fileUploadForm.append("avatar", avatarFile);
+
+                const response = await api.patch("usuarios/avatar", fileUploadForm);
+                user.avatar = response.data.avatar;
+            }
+
+            await api.put("/usuarios", user); 
             localStorage.setItem("@rocketevents:user", JSON.stringify(user));
 
             setData({ user, token: data.token });
