@@ -9,6 +9,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 export default function TemporaryDrawer() {
   const [open, setOpen] = React.useState(false);
@@ -22,7 +23,7 @@ export default function TemporaryDrawer() {
       <List>
         {['Eventos', 'Locais', 'Categorias'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
+            <ListItemButton component={Link} to={`/${text}`.toLowerCase()}>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
