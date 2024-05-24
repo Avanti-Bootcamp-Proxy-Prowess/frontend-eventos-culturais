@@ -12,6 +12,10 @@ export default {
       GRAY_100: "#999591",
       GRAY_300: "#666360",
   
-      RED: "#FF002E"
+      RED: "#FF002E",
+      MOONSTONE: "#21B9CB",
+      BRIGHT_ORANGE: "#FE4F6A",
+      
+
     }
   }
