@@ -1,7 +1,7 @@
 import { RiShutDownLine } from "react-icons/ri";
 import { useAuth } from "../../hooks/auth";
 import { api } from '../../services/api';
-import { Container, Profile, Logout } from "./styles";
+import { Container, Profile, Logout, Wrapper } from "./styles";
 
 import { useNavigate  } from "react-router-dom";
 import avatarPlaceholder  from "../../assets/userImg.jpg"
@@ -21,7 +21,9 @@ export function Header() {
 
     return (
         <Container>
-            <Drawer/>                         
+            <Wrapper>
+                <Drawer /> 
+            </Wrapper>
             <Profile to="/profile">
                 <img src={avatarUrl} alt={user.nome} />
                 <div>
