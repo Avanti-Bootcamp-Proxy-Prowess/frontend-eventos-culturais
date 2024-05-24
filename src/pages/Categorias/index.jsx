@@ -6,7 +6,7 @@ import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { Container, Form, Wrapper, Button, Section, PopUp } from "./styles";
 
-import { MdAddCircleOutline, MdModeEditOutline, MdClose, MdCheckCircle } from "react-icons/md";
+import { MdAddCircleOutline, MdModeEditOutline, MdClose, MdCheckCircle, MdOutlineCancel } from "react-icons/md";
 import { FaTrashCan } from "react-icons/fa6";
 import { ImCancelCircle } from "react-icons/im";
 
@@ -176,7 +176,7 @@ export function Categorias() {
                         <Button type="submit">
                             <MdCheckCircle size={30} color="green" />
                         </Button>
-                        <ImCancelCircle onClick={() => setIsEditPopupOpen(false)} size={60} color="red" cursor="pointer"/>
+                        <MdOutlineCancel onClick={() => setIsEditPopupOpen(false)} size={30} color="red" cursor="pointer"/>
                         {/* <MdClose onClick={() => setIsEditPopupOpen(false)} size={78} color="red" cursor="pointer"/> */}
                     </Form>
                 </PopUp>
