@@ -10,28 +10,12 @@ export const Back = styled(BackIcon)`
     left: 8%;
 
     &:hover {
-        color: #21B9CB;
+        color: ${({ theme }) => theme.COLORS.MOONSTONE};
     }
 
     @media screen and (max-width: 700px) {
         font-size: 24px;
         transition: font-size 2s
-    }
-
-    @keyframes fall-and-move {
-        0% {
-            transform: translateY(0) translateX(0) rotate(0);
-        }
-        24% {
-            transform: translateY(42px) translateX(0) rotate(0);
-        }
-        90% {
-            transform: translateY(42px) translateX(48px) rotate(60deg);
-        }
-
-        100% {
-            transform: translateY(42px) translateX(44px) rotate(56deg);
-        }
     }
 `;
 
@@ -43,7 +27,7 @@ export const Heading = styled.h1`
     }
 
     span.page-not-found {
-        color: #21B9CB;
+        color: ${({ theme }) => theme.COLORS.MOONSTONE};
         font-size: 1.75em;
         padding-left: 120px;
         margin-left: -120px;
@@ -54,7 +38,7 @@ export const Heading = styled.h1`
         font-size: 10em;
         font-weight: 900;
         line-height: 100%;
-        color: #FE4F6A;
+        color: ${({ theme }) => theme.COLORS.BRIGHT_ORANGE};
     }
 
     @media screen and (max-width: 700px) {
@@ -100,7 +84,6 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #FCFCFC;
     font-size: 16px;
 
     .main {
@@ -127,7 +110,7 @@ export const Container = styled.div`
     .shadow {
         width: 160px;
         height: 25px;
-        background: hsla(351, 62%, 58%);
+        background: ${({ theme }) => theme.COLORS.BRIGHT_ORANGE};
         border-radius: 50%;
         margin: 0 auto;
         filter: blur(-10px);
