@@ -16,13 +16,27 @@ export default createGlobalStyle`
         border-radius: 10px;
     }
     ::-webkit-scrollbar-thumb:hover{
-        background: ${({theme})=> theme.COLORS.GRAY_100};
+        background: ${({theme})=> theme.COLORS.GRAY_900};
     }
 
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        /* overflow: auto; */
+        scroll-behavior: smooth;
+    }
+
+    html {
+        font-size: 16px;
+
+        @media screen and (max-width: 1280px) {
+        font-size: 12px;
+        }
+
+        @media screen and (max-width: 840px) {
+        font-size: 10px;
+        }
     }
 
     body {
@@ -31,7 +45,8 @@ export default createGlobalStyle`
         color: ${({theme})=> theme.COLORS.WHITE}
     }
     
-    body, input,  button, textarea {
+
+    body, input,  button, textarea, select {
         font-family: "Roboto Slab", serif;
         font-size: 16px;
         outline: none;
@@ -46,7 +61,13 @@ export default createGlobalStyle`
         transition: filter .2s;
     }
 
-    a:hover, button:hover {
-        filter: brightness(0.9);
+    button:active {
+        transform: scale(0.88);
+    }
+
+    button:hover {
+        box-shadow: -3px 3px 2px -1px hwb(0 100% 0% / 0.4);
+        transition: all 0.5s ease-in;
+        transform: translate(2px, -2px);
     }
 `;

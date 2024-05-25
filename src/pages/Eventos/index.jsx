@@ -7,7 +7,7 @@ import { format, parseISO } from 'date-fns';
 
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
-import { Container, Form, Wrapper, Button, Section, PopUp } from "./styles";
+import { Container, Form, Wrapper, Wrapper1, Wrapper2, Button, Section, PopUp } from "./styles";
 import { MdAddCircleOutline, MdModeEditOutline, MdClose, MdCheckCircle, MdOutlineCancel } from "react-icons/md";
 import { FaTrash } from "react-icons/fa";
 
@@ -216,10 +216,11 @@ export function Eventos() {
                             <p>Categoria: {evento.categoria?.nome}</p>
                             <p>Local: {evento.local?.nome}</p>
                         </div>
-                        <div>
+                        <Wrapper1>
                             <MdModeEditOutline onClick={() => handleEdit(evento)} />
                             <FaTrash onClick={() => handleDelete(evento.id)} />
-                        </div>
+                        </Wrapper1>
+                        
                     </Section>
                 ))}
             </Wrapper>
@@ -258,10 +259,12 @@ export function Eventos() {
                                 <option key={local.id} value={local.id}>{local.nome}</option>
                             ))}
                         </select>
-                        <Button type="submit">
+                        <Wrapper2>
+                            <Button type="submit">
                             <MdCheckCircle size={30} color="green" />
-                        </Button>
-                        <MdOutlineCancel onClick={() => setIsEditPopupOpen(false)} size={30} color="red" cursor="pointer" />
+                            </Button>
+                            <MdOutlineCancel onClick={() => setIsEditPopupOpen(false)} size={30} color="red" cursor="pointer" />
+                        </Wrapper2>    
                     </Form>
                 </PopUp>
             )}

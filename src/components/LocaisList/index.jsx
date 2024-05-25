@@ -23,9 +23,9 @@ export function LocaisList({ locais, setLocais, handleEdit }) {
         try {
             if (window.confirm("Você tem certeza que deseja excluir este local?")) {
                 await deleteLocalById(id);
-                alert("Local excluído com sucesso!");
                 getAllLocais();
             }
+            alert("Local excluído com sucesso!");
         } catch (error) {
             console.log("Erro ao deletar local");
         }

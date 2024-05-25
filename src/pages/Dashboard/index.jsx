@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { 
-    Container, WrapperPesquisar, WrapperFiltros, Grid, 
-    EventCard, Input, Select, Option 
+import {
+    Container, Wrapper1, Wrapper2, Wrapper3, Wrapper4, Grid,
+    EventCard, Input, Select, Option
 } from "./styles";
 import { Header } from "../../components/Header";
 import { api } from "../../services/api";
@@ -54,35 +54,41 @@ export function Dashboard() {
         fetchFilteredEvents();
     }, [search, categoriaId, localId, dataEvento]);
 
-    return (
+    return (    
         <Container>
-            <Header />
-            <WrapperPesquisar>
-                <Input 
-                    placeholder="Pesquisar" 
-                    value={search} 
-                    onChange={(e) => setSearch(e.target.value)} 
-                />
-            </WrapperPesquisar>
-            <WrapperFiltros>
-                <Select value={categoriaId} onChange={(e) => setCategoriaId(e.target.value)}>
-                    <Option value="">Categoria</Option>
-                    {categorias.map((categoria) => (
-                        <Option key={categoria.id} value={categoria.id}>{categoria.nome}</Option>
-                    ))}
-                </Select>
-                <Select value={localId} onChange={(e) => setLocalId(e.target.value)}>
-                    <Option value="">Local</Option>
-                    {locais.map((local) => (
-                        <Option key={local.id} value={local.id}>{local.nome}</Option>
-                    ))}
-                </Select>
-                <Input 
-                    type="datetime-local" 
-                    value={dataEvento} 
-                    onChange={(e) => setDataEvento(e.target.value)} 
-                />
-            </WrapperFiltros>
+            <Wrapper1>
+                <Header />
+
+                <Wrapper2> 
+                    <Wrapper3>             
+                        <Input
+                            placeholder="Pesquisar"
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                        />
+                    </Wrapper3>
+                    <Wrapper4>
+                        <Select value={categoriaId} onChange={(e) => setCategoriaId(e.target.value)}>
+                            <Option value="">Categoria</Option>
+                            {categorias.map((categoria) => (
+                                <Option key={categoria.id} value={categoria.id}>{categoria.nome}</Option>
+                            ))}
+                        </Select>
+                        <Select value={localId} onChange={(e) => setLocalId(e.target.value)}>
+                            <Option value="">Local</Option>
+                            {locais.map((local) => (
+                                <Option key={local.id} value={local.id}>{local.nome}</Option>
+                            ))}
+                        </Select>
+                        <Input
+                            type="datetime-local"
+                            value={dataEvento}
+                            onChange={(e) => setDataEvento(e.target.value)}
+                        />
+                    </Wrapper4>
+                </Wrapper2>
+            </Wrapper1>
+
             <Grid>
                 {eventos.map((evento) => (
                     <EventCard key={evento.id}>
