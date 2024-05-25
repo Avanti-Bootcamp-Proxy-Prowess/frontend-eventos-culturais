@@ -3,7 +3,7 @@
 export default {
     COLORS: {
       BACKGROUND_900: "#001621",
-      BACKGROUND_800: "#001A27",
+      BACKGROUND_800: "#001A32",
       BACKGROUND_700: "#3E3B47",
   
       WHITE: "#F4EDE8",
@@ -14,8 +14,6 @@ export default {
   
       RED: "#FF002E",
       MOONSTONE: "#21B9CB",
-      BRIGHT_ORANGE: "#FE4F6A",
-      
-
+      BRIGHT_ORANGE: "#FE4F6A"
     }
   }
