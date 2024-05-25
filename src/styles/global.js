@@ -16,13 +16,15 @@ export default createGlobalStyle`
         border-radius: 10px;
     }
     ::-webkit-scrollbar-thumb:hover{
-        background: ${({theme})=> theme.COLORS.GRAY_100};
+        background: ${({theme})=> theme.COLORS.GRAY_900};
     }
 
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        /* overflow: auto; */
+        scroll-behavior: smooth;
     }
 
     html {
@@ -43,8 +45,9 @@ export default createGlobalStyle`
         color: ${({theme})=> theme.COLORS.WHITE}
     }
     
-    body, input,  button, textarea {
-        font-family: "Roboto", sans-serif;
+
+    body, input,  button, textarea, select {
+        font-family: "Roboto Slab", serif;
         font-size: 16px;
         outline: none;
     }
