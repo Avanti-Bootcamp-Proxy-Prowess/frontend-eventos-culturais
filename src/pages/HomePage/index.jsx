@@ -3,7 +3,11 @@ import { Button } from "../../components/Button";
 import iconRocket from "../../assets/icon-rocket.png";
 import imagePresentation from "../../assets/image-presentation.png";
 
+// import { useAuth } from "../../hooks/auth"
+
 export function HomePage() {
+    // const data = useAuth();
+    // console.log("MEU CONTEXTO =>", data);
 
     return (
         <Conteiner>
