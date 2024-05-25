@@ -58,15 +58,9 @@ export const Button = styled.button`
 
     > svg {
         font-size: 48px;
-        color: ${({ theme }) => theme.COLORS.ORANGE};
+        color: #25B919;
     }    
 `;
-
-// export const Content = styled.div`
-//   grid-area: content;
-//   padding: 0 64px;
-//   overflow-y: auto;
-// `;
 
 
 export const Section = styled.div`
@@ -105,4 +99,18 @@ export const PopUp = styled.div`
     padding: 20px;
     border-radius: 8px;
     z-index: 1000;
+`;
+
+export const Wrapper1 = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+`;
+
+export const Wrapper2 = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 `;

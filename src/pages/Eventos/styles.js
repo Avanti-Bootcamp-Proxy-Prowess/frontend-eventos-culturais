@@ -58,7 +58,7 @@ export const Button = styled.button`
 
     > svg {
         font-size: 48px;
-        color: ${({ theme }) => theme.COLORS.ORANGE};
+        color: #25B919;
     }    
 `;
 
@@ -116,4 +116,22 @@ export const Select = styled.select`
 `;
 
 export const Option = styled.option`
+`;
+
+export const Wrapper1 = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    > svg{
+        color: green;
+    }
+`;
+
+export const Wrapper2 = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 `;
