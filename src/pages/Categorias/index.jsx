@@ -68,13 +68,7 @@ export function Categorias() {
                     alert("Categoria excluída com sucesso!");
                     setCategorias(categorias.filter(categoria => categoria.id !== id));
                 })
-                .catch(error => {
-                    if (error.response) {
-                        alert(error.response.data.message);
-                    } else {
-                        alert("Não foi possível excluir!");
-                    }
-                });
+                .catch(error => alert("Não foi possível excluir!"));
         }
     }
 
