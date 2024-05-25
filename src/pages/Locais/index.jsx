@@ -6,7 +6,7 @@ import { api } from "../../services/api";
 import { LocaisList } from "../../components/LocaisList";
 import { Input } from "../../components/Input";
 import { Header } from "../../components/Header";
-import { Container, Wrapper, Form, Button, PopUp } from "./styles";
+import { Container, Wrapper, Wrapper1, Wrapper2, Form, Button, PopUp } from "./styles";
 import { MdAddCircleOutline, MdModeEditOutline, MdClose, MdCheckCircle } from "react-icons/md";
 import { ImCancelCircle } from "react-icons/im";
 
@@ -192,10 +192,12 @@ export function Locais() {
                             value={editPais}
                             onChange={(e) => setEditPais(e.target.value)}
                         />
-                        <Button type="submit">
-                            <MdCheckCircle size={30} color="green" />
-                        </Button>
-                        <ImCancelCircle onClick={() => setIsEditPopupOpen(false)} size={60} color="red" cursor="pointer" />
+                        <Wrapper2>
+                            <Button type="submit">
+                                <MdCheckCircle size={30} color="green" />
+                            </Button>
+                            <ImCancelCircle onClick={() => setIsEditPopupOpen(false)} size={28} color="red" cursor="pointer" />
+                        </Wrapper2>
                     </Form>
                 </PopUp>
             )}
