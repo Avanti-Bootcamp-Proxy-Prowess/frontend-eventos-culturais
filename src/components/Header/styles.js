@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
 export const Container = styled.header`
-    /* grid-area: header; */
     height: 100px;
     width: 100%;
 
@@ -10,8 +9,8 @@ export const Container = styled.header`
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 80px;
-
 `;
 
 export const Profile = styled(Link)`
@@ -41,6 +40,12 @@ export const Profile = styled(Link)`
             font-size: 18px;
             color: ${({ theme }) => theme.COLORS.WHITE};
     }
+
+    @media (max-width: 600px) {
+        > div {
+            display: none;
+        }
+  }
 `;
 
 export const Logout = styled.button`
@@ -51,4 +56,9 @@ export const Logout = styled.button`
         font-size: 28px;
         color: ${({ theme }) => theme.COLORS.GRAY_100};
     }    
+`;
+
+export const Wrapper = styled.div`
+    align-items: center;
+    font-size: 28px;
 `;
